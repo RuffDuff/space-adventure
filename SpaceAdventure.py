@@ -253,7 +253,7 @@ def movingForPastOne():
                 print "       " + space13 + space26
                 print "So whare do ye be wanton' tee move now eh?"
                 turnValue = turnValue + 1
-                if turnValue == 6
+                if turnValue == 6:
                     turnOver = 1
                     turnValue = 1
 
