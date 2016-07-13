@@ -8,10 +8,9 @@ import random
 
 #b
 #definitions go here
-global turnOver
-global turnValue
-turnOver = 0 
+turnOver = 0
 turnValue = 1
+Wait = 3
 
 def spaceCopTurnAI():
     SCturn1=1
@@ -98,6 +97,11 @@ def Shields():
     
 
 def Mines():
+    global turn1
+    global turn2
+    global turn3
+    global turn4
+    global turn5
     if turn1 == 5:
         while turnValue == 1:
             print "Where yar placin' a mine?"
@@ -116,7 +120,7 @@ def Mines():
         
 
     if turn2 == 5:
-        if turnOver ==0:
+        if turnOver == 0:
             while turnvalue == 2:
                 print "Where yar placin' a mine?"
                 print "        " + space1 + "                      " + space14
@@ -188,6 +192,13 @@ def Mines():
 
 
 def movingForPastOne():
+    global turn1
+    global turn2
+    global turn3
+    global turn4
+    global turn5
+    global turnOver
+    global turnValue
     if turn1 == 1:
         if turnOver == 0:
             while turnValue == 1:
@@ -197,7 +208,7 @@ def movingForPastOne():
                 print " " + space10 + space11 + space12 + "         " + space23 + space24 + space25
                 print "       " + space13 + space26
                 print "So whare do ye be wanton' tee move now eh?"
-                turnValue = 2
+                
 
     if turn2 == 1:
         if turnOver == 0:
@@ -208,7 +219,7 @@ def movingForPastOne():
                 print " " + space10 + space11 + space12 + "         " + space23 + space24 + space25
                 print "       " + space13 + space26
                 print "So whare do ye be wanton' tee move now eh?"
-                turnValue = 3
+                
 
     if turn3 == 1:
         if turnOver == 0:
@@ -219,7 +230,7 @@ def movingForPastOne():
                 print " " + space10 + space11 + space12 + "         " + space23 + space24 + space25
                 print "       " + space13 + space26
                 print "So whare do ye be wanton' tee move now eh?"
-                turnValue = 4
+                
 
     if turn4 == 1:
         if turnOver == 0:
@@ -230,7 +241,7 @@ def movingForPastOne():
                 print " " + space10 + space11 + space12 + "         " + space23 + space24 + space25
                 print "       " + space13 + space26
                 print "So whare do ye be wanton' tee move now eh?"
-                turnValue = 5
+                
 
     if turn5 == 1:
         if turnOver == 0:
@@ -241,7 +252,10 @@ def movingForPastOne():
                 print " " + space10 + space11 + space12 + "         " + space23 + space24 + space25
                 print "       " + space13 + space26
                 print "So whare do ye be wanton' tee move now eh?"
-                turnValue = 1
+                turnValue = turnValue + 1
+                if turnValue == 6
+                    turnOver = 1
+                    turnValue = 1
 
     turnOver=0
 
@@ -473,7 +487,7 @@ def moveTest():
 
 
 
-def Movment():
+def Movement():
     movingForPastOne()
     validatePositionR()
     moveTest()
@@ -573,51 +587,53 @@ gameStart = 1
 password = int(raw_input("Do you have a password? If not enter 1"))
 if password == 72:
     gameStart = 0
+if password == 2:
+    Wait = 0.1
 while gameStart == 1:
     print "You are an Irish space pirate stuck on the planet Geotria, in the Trestric Sector."  
-    time.sleep(7)
+    time.sleep(Wait)
     #Loading
     print "Building StarBoat."
-    time.sleep(1.5)
+    time.sleep(Wait)
     print "Building StarBoat."
-    time.sleep(0.1)  
+    time.sleep(Wait)  
     print "      /\ "
-    time.sleep(0.1)
+    time.sleep(Wait)
     print "     /  \ "
-    time.sleep(0.5)
+    time.sleep(Wait)
     print "    / __ \ "
-    time.sleep(0.2)
+    time.sleep(Wait)
     print "   | /  \ | "
-    time.sleep(0.2)
+    time.sleep(Wait)
     print "   | \__/ |"
-    time.sleep(0.1)
+    time.sleep(Wait)
     print "   |      |"
-    time.sleep(0.1)
+    time.sleep(Wait)
     print "   |      |"
-    time.sleep(1.2)
+    time.sleep(Wait)
     print "   |      |"
-    time.sleep(0.4)
+    time.sleep(Wait)
     print "   |      |"
-    time.sleep(0.4)
+    time.sleep(Wait)
     print "  /|      |\ "
-    time.sleep(0.5)
+    time.sleep(Wait)
     print " | |      | |"
-    time.sleep(0.1)
+    time.sleep(Wait)
     print " | |      | |"
-    time.sleep(0.1)
+    time.sleep(Wait)
     print " \/|      |\/ "
-    time.sleep(0.1)
+    time.sleep(Wait)
     print "   \______/ "
-    time.sleep(2)
+    time.sleep(Wait)
     #
     #
     #
     #
     #story
     print "*One Day an executive, Mr. Hansen, from ZenCorp approaches you in a black tuxedo.*"
-    time.sleep(3)
-    print "(ZenCorp is one of the largest companies in your sector and has funded many a space pirate, but are known to not be trustworthy and to alert the authorities if things don’t go their way.)"
-    time.sleep(11)
+    time.sleep(Wait)
+    print "(ZenCorp is one of the largest companies in your sector and has funded many a space pirate, but are known to not be trustworthy and to alert the authorities if things don/'t go their way.)"
+    time.sleep(Wait)
     print "'Excuse me", userName, "',says Mr. Hansen, 'I have come with a proposal. Your piloting skills are famous on this planet, we also hear of your dreams to fly a larger ship, so ZenCorp will fund you if, and only if, you do us a small favor. What do you say?'"
     #first choice =)
 
@@ -625,12 +641,12 @@ while gameStart == 1:
     firstChoice = int(raw_input("1 accepts the offer 2 declines"))
     if firstChoice == 1:
         print "You won’t regret this!"
-        time.sleep(2)
+        time.sleep(Wait)
         print "Meet us next week at hangar 7 for your ship and more details. It’s your job to get a crew though!"
-        time.sleep(5)
+        time.sleep(Wait)
         print "*An evil smile spreads across his face.*"
-        time.sleep(3)
-."
+        time.sleep(Wait)
+        
         print "'Welcome captain, this is your new ship."
         #
         #ship randomizer
@@ -805,7 +821,7 @@ while gameStart == 1:
 
 
 
-    print "An enemy has appeared!  Engage (1)? Or run like a coward (2)?"
+    print "An enemy has appeared!  Engage (1)? Or run like a coward (2)? 3 for debug."
     balls=int(raw_input())
     if balls == 1:
         print "You warm up the cannons."
@@ -834,7 +850,7 @@ while gameStart == 1:
             #round 1
                 #turn 1
             fiveTurns()
-            Movement()   
+            Movement()
             Shields()
             Mines()
                 #turn 2
@@ -853,7 +869,9 @@ while gameStart == 1:
             Movement()
             Shields()
             Mines()
-            
+
+    if balls==3:
+        Movement()
 
             
     def enemyMovementAI():
